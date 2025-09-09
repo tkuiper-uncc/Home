@@ -1,0 +1,39 @@
+# Create a simple static site
+cat > index.html <<'EOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Custody Calendar</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Because this is a project site, everything lives under /custodycalendar -->
+  <base href="/custodycalendar/">
+</head>
+<body>
+  <main>
+    <h1>Custody Calendar</h1>
+    <p>This is a temporary landing page served at <strong>tamarakuiper.com/custodycalendar</strong>.</p>
+    <button id="btn">Click me</button>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
+EOF
+
+cat > style.css <<'EOF'
+body { font-family: system-ui, Arial, sans-serif; background:#f7f7f7; margin:0; }
+main { max-width: 720px; margin: 8rem auto; background:#fff; padding:2rem; border-radius:16px; box-shadow:0 8px 30px rgba(0,0,0,.08); text-align:center; }
+h1 { margin-top:0; }
+button { padding:.75rem 1.25rem; border:0; border-radius:10px; cursor:pointer; }
+button:hover { filter:brightness(0.95); }
+EOF
+
+cat > script.js <<'EOF'
+document.getElementById('btn').addEventListener('click', () => {
+  alert('Your site is live 🎉');
+});
+EOF
+
+# Optional: tell Pages not to run Jekyll (good for plain static sites)
+touch .nojekyll
