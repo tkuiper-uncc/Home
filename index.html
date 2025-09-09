@@ -1,5 +1,4 @@
-# Create a simple static site
-cat > index.html <<'EOF'
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,27 +10,11 @@ cat > index.html <<'EOF'
 <body>
   <main>
     <h1>Custody Calendar</h1>
-    <p>This is a temporary landing page served at <strong>tamarakuiper.com/custodycalendar</strong>.</p>
+    <p>This is a temporary landing page served at <strong>tamarakuiper.com</strong>.</p>
     <button id="btn">Click me</button>
   </main>
   <script src="script.js"></script>
 </body>
 </html>
-EOF
 
-cat > style.css <<'EOF'
-body { font-family: system-ui, Arial, sans-serif; background:#f7f7f7; margin:0; }
-main { max-width: 720px; margin: 8rem auto; background:#fff; padding:2rem; border-radius:16px; box-shadow:0 8px 30px rgba(0,0,0,.08); text-align:center; }
-h1 { margin-top:0; }
-button { padding:.75rem 1.25rem; border:0; border-radius:10px; cursor:pointer; }
-button:hover { filter:brightness(0.95); }
-EOF
 
-cat > script.js <<'EOF'
-document.getElementById('btn').addEventListener('click', () => {
-  alert('Your site is live 🎉');
-});
-EOF
-
-# Optional: tell Pages not to run Jekyll (good for plain static sites)
-touch .nojekyll
